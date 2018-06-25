@@ -1,0 +1,107 @@
+﻿<Page x:Class="EDSL.SetupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EDSL"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SetupPage">
+
+    <Grid Margin="10,0,10,10" Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Column="0" Fill="LightBlue" />
+            <Border Grid.Column="0"  BorderBrush="Black" BorderThickness="1"/>
+
+            <Rectangle Grid.Row="1" Fill="LightBlue" />
+            <Border Grid.Row="1"  BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+
+
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Margin="10,0,10,10">
+            <Button Name="seasonBtn" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="20" Content="Season" Margin="10" Click="seasonBtn_Click"/>
+            <Button Name="resultsBtn" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="20" Content="Results" Margin="5" Click="resultsBtn_Click"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="10,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" >
+                    <TextBlock Text="Season" FontSize="14" HorizontalAlignment="Right" Margin="10"/>
+                    <TextBlock Text="Start Date" FontSize="14" HorizontalAlignment="Right" Margin="10,20" />
+                    <TextBlock Text="End Date" FontSize="14" HorizontalAlignment="Right" Margin="5"/>
+                    <TextBlock Text="No. Of Rounds" FontSize="14" HorizontalAlignment="Right" Margin="10,20" />
+                    <TextBlock Text="Division" FontSize="14" HorizontalAlignment="Right" Margin="10, 10" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <TextBox Name="seasonTb" Height="25" Width="150" Margin="10"/>
+                    <DatePicker Name="startDatePicker" Height="25" Width="150" Margin="10">
+                        <DatePicker.BlackoutDates>
+                            <CalendarDateRange Start="12/22/2018" End="12/29/2018"/>
+                            <CalendarDateRange Start="12/31/2018" End="1/1/2019" />
+                        </DatePicker.BlackoutDates>
+                    </DatePicker>
+
+                    <TextBox Name="endDateTb" Height="25" Width="150" Margin="10"/>
+                    <!--<DatePicker Name="datePicker1" Height="25" Width="150" Margin="10">
+                        <DatePicker.BlackoutDates>
+                            <CalendarDateRange Start="12/22/2018" End="12/29/2018"/>
+                            <CalendarDateRange Start="12/31/2018" End="1/1/2019" />
+                        </DatePicker.BlackoutDates>
+                    </DatePicker>-->
+
+
+                    <TextBox Name="roundsTb" Height="25" Width="150" Margin="10" />
+                    <ComboBox x:Name="divisionCb" Height="25" Width="150" Margin="26,12">
+                        <ComboBoxItem Content="Division A"/>
+                        <ComboBoxItem Content="Division B"/>
+                        <ComboBoxItem Content="Division C"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" Name="saveBtn" Content="Save Season" Height="20" Width="90" VerticalAlignment="Top" Margin="5,10"/>
+                    <Button Grid.Column="0" Name="selectDateBtn"  Content="Select Date" Height="20" Width="90" VerticalAlignment="Top" Margin="5,55" Click="selectDateBtn_Click"/>
+                    <Button Grid.Column="0" Name="createDrawBtn" Content="Create Draw" Height="20" Width="90" VerticalAlignment="Top" Margin="5,190" Click="createDrawBtn_Click"/>
+                    <Button Grid.Column="0" Name="viewDrawBtn" Content="View Draw" Height="20" Width="90" VerticalAlignment="Top" Margin="5,220" Click="viewDrawBtn_Click"/>
+                </Grid>
+            </Grid>
+
+            <Rectangle Grid.Row="0" Fill="LightBlue"/>
+            <TextBlock Grid.Row="0" Text="Setup Season" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="16"/>
+            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" />
+        </Grid>
+
+    </Grid>
+</Page>

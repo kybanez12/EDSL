@@ -1,0 +1,18 @@
+﻿<Window x:Class="EDSL.AddResults"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDSL"
+        mc:Ignorable="d"
+        Title="Add Results" Height="250" Width="250">
+    <Grid>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="43,128,0,0" VerticalAlignment="Top" Width="62" Click="Button_Click"/>
+        <Button Name="UpdateBtn"  Content="Update" Margin="124,128,61,0" VerticalAlignment="Top" Click="UpdateBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,50,0,0" TextWrapping="Wrap" Text="Home Score" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="43,80,0,0" TextWrapping="Wrap" Text="Away Score" VerticalAlignment="Top"/>
+        <TextBox Name="HomeTb" HorizontalAlignment="Left" Height="23" Margin="138,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="43"/>
+        <TextBox Name="AwayTb" HorizontalAlignment="Left" Height="23" Margin="138,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="43"/>
+
+    </Grid>
+</Window>
